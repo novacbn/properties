@@ -17,9 +17,9 @@ Currently missing a more readable form of documentation, although everything und
 
 ## Properties Format
 
-Currently `properities` only supports two encoding formats usable in `encode(table value, table options?)` and `decode(string value, table options?)`.
+Currently `properities` only supports two encoding formats usable in `encode(table value, table EncoderOptions?)` and `decode(string value, table DecoderOptions?)`.
 
-### EncoderOptions.encoderType == `lua`
+### EncoderOptions.propertiesEncoder == `lua`
 
 Supports encoding and decoding of Lua tables into human-readable Lua files
 
@@ -32,15 +32,15 @@ tableProp = {
 
 **main.lua**
 ```lua
-local properties    = import 'novacbn/properties'
+local properties    = import 'novacbn/properties/exports'
 local tableProp     = properties.decode(..., {
-    encoderType = 'lua'
+    propertiesEncoder = 'lua'
 })
 
 print(tableProp.testProp) -- prints 'testValue'
 ```
 
-### EncoderOptions.encoderType == `moonscript`
+### EncoderOptions.propertiesEncoder == `moonscript`
 
 Supports encoding and decoding of Lua tables into human-readable [MoonScript](https://moonscript.org) files.
 
@@ -52,9 +52,9 @@ tableProp:
 
 **main.lua**
 ```lua
-local properties    = import 'novacbn/properties'
+local properties    = import 'novacbn/properties/exports'
 local tableProp     = properties.decode(..., {
-    encoderType = 'lua'
+    propertiesEncoder = 'moonscript'
 })
 
 print(tableProp.testProp) -- prints 'testValue'
