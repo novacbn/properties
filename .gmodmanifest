@@ -1,0 +1,10 @@
+name:       "properties"
+author:     "novacbn"
+version:    "0.1.0"
+repository: "github://novacbn/properties"
+
+projectBuilds:
+    "novacbn/properties/exports": "properties"
+
+Packager:
+    targetPlatform: "lua"
